@@ -8,7 +8,7 @@ function Activity() {
     const token = localStorage.getItem('token');
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/tasks/activities', {
+        axios.get('https://taskly-nzgu.onrender.com/api/tasks/activities', {
             headers: {
                 Authorization: `Bearer ${token}`
             }

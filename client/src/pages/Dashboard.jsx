@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 
-const socket = io('http://localhost:5000');
+const socket = io('https://taskly-nzgu.onrender.com');
 function Dashboard() {
 
   const navigate = useNavigate();
@@ -89,7 +89,7 @@ function Dashboard() {
       setLoading(true);
 
       const response = await axios.get(
-        'http://localhost:5000/api/tasks',
+        'https://taskly-nzgu.onrender.com/api/tasks',
         authConfig
       );
 
@@ -169,7 +169,7 @@ function Dashboard() {
 
       if (editingTask) {
         const response = await axios.put(
-          `http://localhost:5000/api/tasks/${editingTask._id}`,
+          `https://taskly-nzgu.onrender.com/api/tasks/${editingTask._id}`,
           dataToSend,
           authConfig
         );
@@ -183,7 +183,7 @@ function Dashboard() {
         );
       } else {
         await axios.post(
-          'http://localhost:5000/api/tasks',
+          'https://taskly-nzgu.onrender.com/api/tasks',
           dataToSend,
           authConfig
         );
@@ -204,7 +204,7 @@ function Dashboard() {
   const toggleTask = async (task) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/tasks/${task._id}`,
+        `https://taskly-nzgu.onrender.com/api/tasks/${task._id}`,
         {
           completed: !task.completed
         },
@@ -231,7 +231,7 @@ function Dashboard() {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/tasks/${taskId}/subtasks`,
+        `https://taskly-nzgu.onrender.com/api/tasks/${taskId}/subtasks`,
         {
           title: subtaskInput.trim()
         },
@@ -256,7 +256,7 @@ function Dashboard() {
   const toggleSubtask = async (taskId, subtaskId) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/tasks/${taskId}/subtasks/${subtaskId}`,
+        `https://taskly-nzgu.onrender.com/api/tasks/${taskId}/subtasks/${subtaskId}`,
         {},
         authConfig
       );
@@ -277,7 +277,7 @@ function Dashboard() {
   const deleteSubtask = async (taskId, subtaskId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/tasks/${taskId}/subtasks/${subtaskId}`,
+        `https://taskly-nzgu.onrender.com/api/tasks/${taskId}/subtasks/${subtaskId}`,
         authConfig
       );
 
@@ -306,7 +306,7 @@ function Dashboard() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/tasks/${id}`,
+        `hhttps://taskly-nzgu.onrender.com/api/tasks/${id}`,
         authConfig
       );
 
@@ -324,7 +324,7 @@ function Dashboard() {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/tasks/${id}/archive`,
+        `https://taskly-nzgu.onrender.com/api/tasks/${id}/archive`,
         {},
         authConfig
       );
@@ -342,7 +342,7 @@ function Dashboard() {
   const restoreTask = async (id) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/tasks/${id}/restore`,
+        `https://taskly-nzgu.onrender.com/api/tasks/${id}/restore`,
         {},
         authConfig
       );

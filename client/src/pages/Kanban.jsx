@@ -32,7 +32,7 @@ function Kanban() {
     const fetchTasks = async () => {
         try {
             const response = await axios.get(
-                'http://localhost:5000/api/tasks',
+                'https://taskly-nzgu.onrender.com/api/tasks',
                 authConfig
             );
 
@@ -93,7 +93,7 @@ function Kanban() {
 
 
             const response = await axios.put(
-                `http://localhost:5000/api/tasks/${taskId}`,
+                `https://taskly-nzgu.onrender.com/api/tasks/${taskId}`,
                 {
                     title: task.title,
                     description: task.description,
