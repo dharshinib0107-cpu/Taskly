@@ -89,7 +89,7 @@ function Dashboard() {
       setLoading(true);
 
       const response = await axios.get(
-        'https://taskly-nzgu.onrender.com/api/tasks',
+        `${import.meta.env.VITE_API_URL}/api/tasks`,
         authConfig
       );
 
